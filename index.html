@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nailul Izzata Gufron - Portofolio</title>
     <style>
         * {
@@ -16,7 +16,6 @@
             line-height: 1.6;
             color: #1F2937;
             background-color: #FFFFFF;
-            scroll-behavior: smooth;
         }
 
         .container {
@@ -25,7 +24,6 @@
             padding: 0 20px;
         }
 
-        /* Header & Navigation */
         header {
             background-color: #FFFFFF;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -65,45 +63,35 @@
             color: #0D9488;
         }
 
-        /* Hero Section */
         .hero {
-            padding: 80px 0;
+            padding: 60px 0;
             text-align: center;
             background: linear-gradient(135deg, #FFFFFF 0%, #F0FDF9 100%);
         }
 
         .profile-circle {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
             border-radius: 50%;
-            margin: 0 auto 25px;
+            margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 4rem;
+            font-size: 3rem;
             font-weight: bold;
-            box-shadow: 0 10px 25px rgba(13,148,136,0.2);
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
-            color: #1F2937;
         }
 
         .hero .tagline {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #0D9488;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-
-        .hero .bio {
-            max-width: 600px;
-            margin: 0 auto;
-            color: #4B5563;
+            margin-bottom: 15px;
         }
 
         .btn {
@@ -114,34 +102,23 @@
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 25px;
+            margin-top: 20px;
             transition: all 0.3s;
-            border: none;
-            cursor: pointer;
         }
 
         .btn:hover {
             background-color: #0F766E;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(13,148,136,0.3);
         }
 
-        /* Sections */
         section {
-            padding: 70px 0;
+            padding: 60px 0;
             border-bottom: 1px solid #E5E7EB;
-        }
-
-        section:last-child {
-            border-bottom: none;
         }
 
         .section-title {
             font-size: 2rem;
             margin-bottom: 40px;
             text-align: center;
-            position: relative;
-            color: #1F2937;
         }
 
         .section-title:after {
@@ -151,14 +128,6 @@
             height: 3px;
             background: #0D9488;
             margin: 10px auto 0;
-            border-radius: 2px;
-        }
-
-        /* Cards & Grids */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
         }
 
         .card {
@@ -166,27 +135,34 @@
             border-radius: 12px;
             padding: 25px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid #E5E7EB;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        .org-item {
+            margin-bottom: 30px;
         }
 
-        .card h3 {
+        .org-title {
+            font-size: 1.3rem;
+            font-weight: bold;
             color: #0D9488;
+            margin-bottom: 5px;
+        }
+
+        .org-year {
+            color: #6B7280;
+            font-size: 0.9rem;
             margin-bottom: 10px;
         }
 
-        .card .date {
-            font-size: 0.85rem;
-            color: #6B7280;
-            margin-bottom: 12px;
+        .org-desc {
+            margin-left: 20px;
         }
 
-        /* Table untuk sertifikat */
+        .org-desc li {
+            margin-bottom: 5px;
+        }
+
         .table-wrapper {
             overflow-x: auto;
         }
@@ -196,8 +172,6 @@
             border-collapse: collapse;
             background: white;
             border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
         th, td {
@@ -209,63 +183,80 @@
         th {
             background-color: #F0FDF9;
             color: #0D9488;
-            font-weight: 600;
         }
 
-        tr:hover {
-            background-color: #F9FAFB;
-        }
-
-        /* Video Grid */
-        .video-grid {
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 25px;
         }
 
-        .video-card iframe {
-            width: 100%;
-            height: 200px;
-            border-radius: 10px;
-            border: none;
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid #E5E7EB;
         }
 
-        /* Kontak */
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-item p {
+            padding: 12px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .skill-badge {
+            background: #F0FDF9;
+            color: #0D9488;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            border: 1px solid #0D9488;
+        }
+
         .contact-info {
             text-align: center;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
         .contact-item {
             background: #F9FAFB;
-            padding: 15px 25px;
+            padding: 12px 25px;
             border-radius: 40px;
             text-decoration: none;
             color: #1F2937;
-            font-weight: 500;
-            transition: all 0.3s;
             border: 1px solid #E5E7EB;
+            transition: all 0.3s;
         }
 
         .contact-item:hover {
             background: #0D9488;
             color: white;
-            border-color: #0D9488;
         }
 
-        /* Footer */
         footer {
             background: #1F2937;
             color: #9CA3AF;
             text-align: center;
             padding: 25px 0;
-            font-size: 0.9rem;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
@@ -275,13 +266,10 @@
                 justify-content: center;
             }
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             .section-title {
-                font-size: 1.6rem;
-            }
-            .grid-2 {
-                grid-template-columns: 1fr;
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -295,9 +283,11 @@
             <div class="nav-links">
                 <a href="#home">Beranda</a>
                 <a href="#about">Tentang</a>
-                <a href="#speaking">Pengalaman</a>
+                <a href="#speaking">Narasumber</a>
+                <a href="#organization">Organisasi</a>
+                <a href="#academic">Akademik</a>
                 <a href="#publications">Publikasi</a>
-                <a href="#videos">Video</a>
+                <a href="#gallery">Galeri</a>
                 <a href="#certifications">Sertifikat</a>
                 <a href="#contact">Kontak</a>
             </div>
@@ -305,159 +295,183 @@
     </div>
 </header>
 
-<main>
-    <!-- Home Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="profile-circle">NG</div>
-            <h1>Nailul Izzata Gufron, S.Ag.</h1>
-            <div class="tagline">Da'i Tersertifikasi MUI | Islamic Educator | Public Speaker</div>
-            <div class="bio">
-                Freshgraduate S1 Ilmu al-Qur'an dan Tafsir UIN Jakarta (cumlaude) dan mahasiswa S2 Pendidikan Agama Islam.
-            </div>
-            <a href="#contact" class="btn">Hubungi Saya</a>
-        </div>
-    </section>
+<section id="home" class="hero">
+    <div class="container">
+        <div class="profile-circle">NG</div>
+        <h1>Nailul Izzata Gufron, S.Ag.</h1>
+        <div class="tagline">Da'i Tersertifikasi MUI | Islamic Educator | Public Speaker | Leadership Mentor</div>
+        <a href="#contact" class="btn">Hubungi Saya</a>
+    </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">Tentang Saya</h2>
-            <div class="card">
-                <p style="margin-bottom: 15px;">Freshgraduate S1 Ilmu al-Qur'an dan Tafsir UIN Syarif Hidayatullah Jakarta (cumlaude) dan mahasiswa S2 Pendidikan Agama Islam. <strong>Da'i tersertifikasi MUI Pusat</strong> dengan pengalaman sebagai pemateri, khatib, dan moderator di berbagai forum tingkat nasional.</p>
-                <p style="margin-bottom: 15px;">Berpengalaman mengajar PAI di SMP dan SMK, serta membimbing peserta didik hingga ke ajang lomba karya ilmiah nasional. Berkomitmen mengembangkan pendidikan Islam yang integratif antara ilmu, akhlak, dan keterampilan.</p>
-                <p><strong>📍 Jakarta Timur, Indonesia</strong></p>
-            </div>
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">Tentang Saya</h2>
+        <div class="card">
+            <p>Freshgraduate S1 Ilmu al-Qur'an dan Tafsir UIN Syarif Hidayatullah Jakarta (cumlaude) dan mahasiswa S2 Pendidikan Agama Islam. <strong>Da'i tersertifikasi MUI Pusat</strong> dengan pengalaman sebagai pemateri, khatib, moderator, dan leadership mentor di berbagai forum tingkat nasional.</p>
+            <p style="margin-top: 15px;">Berpengalaman mengajar PAI di SMP dan SMK, membimbing peserta didik hingga ke ajang lomba karya ilmiah nasional, serta aktif dalam organisasi kepemimpinan mahasiswa. Berkomitmen mengembangkan pendidikan Islam yang integratif.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Pengalaman Narasumber & Dakwah -->
-    <section id="speaking">
-        <div class="container">
-            <h2 class="section-title">Pengalaman Narasumber & Dakwah</h2>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>Peran</th><th>Acara / Instansi</th><th>Tahun</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Pengisi Kajian</td><td>Kecamatan Cipayung</td><td>2026</td></tr>
-                        <tr><td>Pemateri Leadership</td><td>Institute Daarul Qur'an Jakarta</td><td>2025</td></tr>
-                        <tr><td>Pemateri</td><td>Mutiara Harapan Islamic School Bintaro</td><td>2025</td></tr>
-                        <tr><td>Pemateri</td><td>HIQMA UIN Jakarta</td><td>2025</td></tr>
-                        <tr><td>Pemateri Leadership</td><td>Training Management of Organization, Pusdiklat Bogor</td><td>2024</td></tr>
-                        <tr><td>Pengisi Kajian Maulid Nabi</td><td>Cipayung, Jakarta Timur</td><td>2024</td></tr>
-                        <tr><td>Pengisi Tabligh Akbar</td><td>Masjid al-Mujahidin Pamulang</td><td>2024</td></tr>
-                        <tr><td>Mentoring Beasiswa</td><td>Baznas (Bazis) Prov. DKI Jakarta</td><td>2024</td></tr>
-                        <tr><td>Moderator Seminar Al-Qur'an</td><td>Bersama KH. Muhsin Salim</td><td>2024</td></tr>
-                        <tr><td>Official Da'i</td><td>PORSENI JAWARA I Se-Jawa & Madura</td><td>2023</td></tr>
-                        <tr><td>Moderator</td><td>HIQMA Talk bersama Prof. Nasaruddin Umar</td><td>2023</td></tr>
-                        <tr><td>Moderator</td><td>HIQMA Talk bersama Ust. Hasanudin Sinaga</td><td>2023</td></tr>
-                        <tr><td>Peserta Lomba</td><td>Dakwah Da'i Milenial Tingkat Nasional</td><td>2022</td></tr>
-                    </tbody>
-                </table>
-            </div>
+<section id="speaking">
+    <div class="container">
+        <h2 class="section-title">Pengalaman Narasumber</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr><th>Peran</th><th>Acara / Instansi</th><th>Tahun</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Pengisi Kajian</td><td>Kecamatan Cipayung</td><td>2026</td></tr>
+                    <tr><td>Pemateri Leadership</td><td>Institute Daarul Qur'an Jakarta</td><td>2025</td></tr>
+                    <tr><td>Pemateri</td><td>Mutiara Harapan Islamic School Bintaro</td><td>2025</td></tr>
+                    <tr><td>Pemateri</td><td>HIQMA UIN Jakarta</td><td>2025</td></tr>
+                    <tr><td>Pemateri Leadership</td><td>Training Management of Organization, Bogor</td><td>2024</td></tr>
+                    <tr><td>Moderator</td><td>HIQMA Talk bersama Prof. Nasaruddin Umar</td><td>2023</td></tr>
+                    <tr><td>Moderator</td><td>HIQMA Talk bersama Ust. Hasanudin Sinaga</td><td>2023</td></tr>
+                </tbody>
+            </table>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Publikasi Ilmiah -->
-    <section id="publications">
-        <div class="container">
-            <h2 class="section-title">Publikasi Ilmiah</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <h3>Konservasi Lingkungan Melalui Penghijauan dalam Perspektif Hadis</h3>
-                    <div class="date">Tabsyir: Jurnal Dakwah dan Sosial Humaniora, Vol. 6 No. 3, 2025</div>
-                    <p>Penulis pertama. Studi tentang nilai-nilai ekoteologi Islam dalam pelestarian lingkungan.</p>
-                    <a href="https://doi.org/10.59059/tabsyir.v6i3.2291" target="_blank" style="color:#0D9488;">Lihat Publikasi →</a>
-                </div>
-                <div class="card">
-                    <h3>The Veto Paradox: US Hegemony and the Paralysis of Global Solidarity for Palestine</h3>
-                    <div class="date">Smart: Journal of Statecraft, Politics, and Geopolitics, Vol. 1 No. 1, 2026</div>
-                    <p>Penulis tunggal. Analisis geopolitik tentang penggunaan hak veto AS di DK PBB.</p>
-                    <a href="https://ejournal.smartpedia.co.id/index.php/SPolitics/article/view/10" target="_blank" style="color:#0D9488;">Lihat Publikasi →</a>
-                </div>
-                <div class="card">
-                    <h3>Berbuat Baik: Untung atau Justru Buntung?</h3>
-                    <div class="date">HIQMA UIN Jakarta, 2024</div>
-                    <p>Artikel ilmiah populer tentang konsep kebaikan dalam perspektif Al-Qur'an.</p>
-                    <a href="https://hiqmauinjakarta.com/berbuat-baik-untung-atau-justru-buntung-simak-yang-berikut-ini/" target="_blank" style="color:#0D9488;">Baca Artikel →</a>
-                </div>
+<section id="organization">
+    <div class="container">
+        <h2 class="section-title">Pengalaman Organisasi</h2>
+        <div class="card">
+            <div class="org-item">
+                <div class="org-title">Koordinator Dewan Pertimbangan Organisasi</div>
+                <div class="org-year">HIQMA UIN Jakarta | 2024 - 2026</div>
+                <ul class="org-desc">
+                    <li>Mengawasi berjalannya roda organisasi</li>
+                    <li>Mempertimbangkan setiap kebijakan yang akan dilakukan pengurus dan anggota organisasi</li>
+                </ul>
+            </div>
+            <div class="org-item">
+                <div class="org-title">Ketua Umum</div>
+                <div class="org-year">Asosiasi Mahasiswa Seni Islami (AMSI) Nusantara | 2024 - 2025</div>
+                <ul class="org-desc">
+                    <li>Mengkoordinasikan seluruh UKM yang memiliki latar belakang ke-Alqur'anan dan seni Islam se-Indonesia</li>
+                    <li>Membuat agenda tahunan rutin silaturahmi AMSI Nusantara</li>
+                </ul>
+            </div>
+            <div class="org-item">
+                <div class="org-title">Ketua Umum</div>
+                <div class="org-year">Himpunan Qari dan Qari'ah (HIQMA) UIN Jakarta | 2023 - 2024</div>
+                <ul class="org-desc">
+                    <li>Memimpin organisasi mahasiswa tingkat universitas dalam bidang seni Islam dan Al-Qur'an</li>
+                    <li>Mengelola kegiatan perlombaan Festival Seni Islami tingkat Nasional</li>
+                    <li>Mengembangkan program kaderisasi dan pembinaan bakat mahasiswa</li>
+                    <li>Merancang dan menjadi penanggung jawab umum dalam setiap event yang berjalan</li>
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Video Galeri -->
-    <section id="videos">
-        <div class="container">
-            <h2 class="section-title">Video Kegiatan</h2>
-            <div class="video-grid">
-                <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/-0Mkw3qSGjg" allowfullscreen></iframe>
-                    <p style="margin-top: 8px; font-size: 0.9rem;">Kajian & Dakwah</p>
-                </div>
-                <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/WFBYAGwa9p8" allowfullscreen></iframe>
-                    <p style="margin-top: 8px; font-size: 0.9rem;">Pemateri Leadership</p>
-                </div>
-                <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/aUNqvpBkciA" allowfullscreen></iframe>
-                    <p style="margin-top: 8px; font-size: 0.9rem;">Kajian Umum</p>
-                </div>
-                <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/VmgV06DzP0w" allowfullscreen></iframe>
-                    <p style="margin-top: 8px; font-size: 0.9rem;">Moderator HIQMA Talk</p>
-                </div>
-                <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/rARW2mz7ooI" allowfullscreen></iframe>
-                    <p style="margin-top: 8px; font-size: 0.9rem;">Ceramah Ramadhan</p>
-                </div>
-                <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/cVM180nd3Is" allowfullscreen></iframe>
-                    <p style="margin-top: 8px; font-size: 0.9rem;">Tausiyah</p>
-                </div>
-            </div>
+<section id="academic">
+    <div class="container">
+        <h2 class="section-title">Academic Experience</h2>
+        <div class="card">
+            <ul style="margin-left: 20px;">
+                <li><strong>Guru Pembimbing Lomba Karya Ilmiah Tingkat Nasional</strong> (2026)</li>
+                <li><strong>Publikasi artikel dan tulisan edukatif</strong> berbasis keislaman dan kepemudaan pada media digital (2024 - Sekarang)</li>
+            </ul>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Sertifikasi & Penghargaan -->
-    <section id="certifications">
-        <div class="container">
-            <h2 class="section-title">Sertifikasi & Penghargaan</h2>
-            <div class="table-wrapper">
-                <table>
-                    <thead><tr><th>Sertifikasi / Penghargaan</th><th>Penerbit</th><th>Tahun</th></tr></thead>
-                    <tbody>
-                        <tr><td>Guru Terfavorit</td><td>SMK Bina Rahayu</td><td>2025</td></tr>
-                        <tr><td>Syahadah Standarisasi Da'i</td><td>Majelis Ulama Indonesia (MUI) Pusat</td><td>2024</td></tr>
-                        <tr><td>Certificate Leadership in Qur'an (C.LQ)</td><td>-</td><td>2020-2024</td></tr>
-                        <tr><td>Awardee Beasiswa Baznas</td><td>Baznas</td><td>2023</td></tr>
-                        <tr><td>Wisudawan Tahfiz 5 Juz</td><td>HIQMA UIN Jakarta</td><td>2022</td></tr>
-                        <tr><td>Certificate Khatib dan Mubaligh</td><td>DMI & PUI Cabang Cipayung</td><td>2021</td></tr>
-                        <tr><td>Sertifikasi Bahasa Arab</td><td>Yayasan Basis Ummah</td><td>2021</td></tr>
-                    </tbody>
-                </table>
-            </div>
+<section id="publications">
+    <div class="container">
+        <h2 class="section-title">Publikasi Ilmiah</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><div style="padding:15px"><h3>Konservasi Lingkungan Melalui Penghijauan dalam Perspektif Hadis</h3><p>Tabsyir, 2025</p><a href="https://doi.org/10.59059/tabsyir.v6i3.2291" target="_blank" style="color:#0D9488">Lihat →</a></div></div>
+            <div class="gallery-item"><div style="padding:15px"><h3>The Veto Paradox</h3><p>Smart Journal, 2026</p><a href="https://ejournal.smartpedia.co.id/index.php/SPolitics/article/view/10" target="_blank" style="color:#0D9488">Lihat →</a></div></div>
+            <div class="gallery-item"><div style="padding:15px"><h3>Berbuat Baik: Untung atau Buntung?</h3><p>HIQMA, 2024</p><a href="https://hiqmauinjakarta.com/berbuat-baik-untung-atau-justru-buntung-simak-yang-berikut-ini/" target="_blank" style="color:#0D9488">Lihat →</a></div></div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Kontak -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Hubungi Saya</h2>
-            <div class="contact-info">
-                <a href="https://wa.me/6287820768832" class="contact-item" target="_blank">📱 WhatsApp</a>
-                <a href="mailto:nailulgufron40@gmail.com" class="contact-item">✉️ Email</a>
-                <a href="https://www.instagram.com/nailul.izzata/" class="contact-item" target="_blank">📷 Instagram</a>
-                <a href="https://www.youtube.com/@NailulIzzataGufron" class="contact-item" target="_blank">▶️ YouTube</a>
-            </div>
+<section id="certifications">
+    <div class="container">
+        <h2 class="section-title">Sertifikasi & Penghargaan</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead><tr><th>Sertifikasi / Penghargaan</th><th>Tahun</th></thead>
+                <tbody>
+                    <tr><td>Guru ter-favorit di SMK Bina Rahayu, Depok</td><td>2025</td></tr>
+                    <tr><td>Sertifikasi Kuliah Studi Islam dengan tema "Intisari Hadis Arba'in"</td><td>2025</td></tr>
+                    <tr><td>Sertifikasi kaderisasi tenaga Hisab Rukyat Nasional</td><td>2025</td></tr>
+                    <tr><td>Syahadah Standarisasi Da'i Majelis Ulama Indonesia (MUI) Pusat</td><td>2024</td></tr>
+                    <tr><td>Certificate Leadership in Qur'an (C.LQ)</td><td>2024</td></tr>
+                    <tr><td>Awardee Beasiswa Baznas</td><td>2020-2024</td></tr>
+                    <tr><td>Wisudawan Tahfiz 5 Juz HIQMA UIN Jakarta</td><td>2022</td></tr>
+                    <tr><td>Certificate Khatib dan Mubaligh dari DMI & PUI Cabang Cipayung Jakarta Timur</td><td>2021</td></tr>
+                    <tr><td>Sertifikasi Bahasa Arab oleh Yayasan Basis Ummah</td><td>2021</td></tr>
+                </tbody>
+            </table>
         </div>
-    </section>
-</main>
+    </div>
+</section>
+
+<section id="skills">
+    <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+            <span class="skill-badge">Public Communication & Islamic Speaking</span>
+            <span class="skill-badge">Classroom Management</span>
+            <span class="skill-badge">Digital Learning Media</span>
+            <span class="skill-badge">Educational Leadership</span>
+            <span class="skill-badge">Leadership & Teamwork</span>
+            <span class="skill-badge">Event Management, Mentoring & Training</span>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <div class="container">
+        <h2 class="section-title">Dokumentasi Kegiatan & Sertifikat</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="CamScanner 24-03-2026 10.08.pdf" alt="Dokumen"><p>📄 Surat Rekomendasi</p></div>
+            <div class="gallery-item"><img src="SERTIFIKAT FSIN.png" alt="Sertifikat"><p>📜 Sertifikat FSIN</p></div>
+            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 14.35.57.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 1</p></div>
+            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 14.35.58 (1).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 2</p></div>
+            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 14.35.58 (2).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 3</p></div>
+            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 14.35.58.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 4</p></div>
+            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 14.35.59.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 5</p></div>
+            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.02.24.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 6</p></div>
+            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.02.58.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 7</p></div>
+            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.14.54(1).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 8</p></div>
+            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.14.54(2).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 9</p></div>
+            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.14.54(3).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 10</p></div>
+            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.14.54.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 11</p></div>
+            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.14.55(1).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 12</p></div>
+            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.14.55.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 13</p></div>
+            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.15.31.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 14</p></div>
+            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.16.16.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 15</p></div>
+            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.17.55.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 16</p></div>
+            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.22.49.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 17</p></div>
+            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.23.08.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 18</p></div>
+            <div class="gallery-item"><img src="Nailul Izzata Gufron (1).pdf" alt="CV"><p>📄 CV Nailul Izzata Gufron</p></div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">Hubungi Saya</h2>
+        <div class="contact-info">
+            <a href="https://wa.me/6287820768832" class="contact-item" target="_blank">📱 WhatsApp</a>
+            <a href="mailto:nailulgufron40@gmail.com" class="contact-item">✉️ Email</a>
+            <a href="https://www.instagram.com/nailul.izzata/" class="contact-item" target="_blank">📷 Instagram</a>
+        </div>
+    </div>
+</section>
 
 <footer>
     <div class="container">
-        <p>&copy; 2026 Nailul Izzata Gufron, S.Ag. | Da'i Tersertifikasi MUI Pusat</p>
+        <p>&copy; 2026 Nailul Izzata Gufron, S.Ag. | Da'i Tersertifikasi MUI Pusat | Leadership Mentor</p>
     </div>
 </footer>
 
