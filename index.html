@@ -197,6 +197,12 @@
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             border: 1px solid #E5E7EB;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
         }
 
         .gallery-item img {
@@ -209,6 +215,7 @@
             padding: 12px;
             font-size: 0.9rem;
             text-align: center;
+            font-weight: 500;
         }
 
         .skills-grid {
@@ -243,11 +250,32 @@
             color: #1F2937;
             border: 1px solid #E5E7EB;
             transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .contact-item:hover {
             background: #0D9488;
             color: white;
+        }
+
+        .download-btn {
+            background: #0D9488;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #0F766E;
+            transform: translateY(-2px);
         }
 
         footer {
@@ -271,6 +299,35 @@
             .section-title {
                 font-size: 1.5rem;
             }
+        }
+
+        /* Modal untuk perbesar gambar */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            cursor: pointer;
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            margin-top: 5%;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -322,7 +379,7 @@
                 <thead>
                     <tr><th>Peran</th><th>Acara / Instansi</th><th>Tahun</th></tr>
                 </thead>
-                                <tbody>
+                <tbody>
                     <tr><td>Pengisi Kajian</td><td>Kecamatan Cipayung</td><td>2026</td></tr>
                     <tr><td>Pemateri Leadership</td><td>Institute Daarul Qur'an Jakarta</td><td>2025</td></tr>
                     <tr><td>Pemateri</td><td>Mutiara Harapan Islamic School Bintaro</td><td>2025</td></tr>
@@ -349,28 +406,17 @@
             <div class="org-item">
                 <div class="org-title">Koordinator Dewan Pertimbangan Organisasi</div>
                 <div class="org-year">HIQMA UIN Jakarta | 2024 - 2026</div>
-                <ul class="org-desc">
-                    <li>Mengawasi berjalannya roda organisasi</li>
-                    <li>Mempertimbangkan setiap kebijakan yang akan dilakukan pengurus dan anggota organisasi</li>
-                </ul>
+                <ul class="org-desc"><li>Mengawasi berjalannya roda organisasi</li><li>Mempertimbangkan setiap kebijakan yang akan dilakukan pengurus dan anggota organisasi</li></ul>
             </div>
             <div class="org-item">
                 <div class="org-title">Ketua Umum</div>
                 <div class="org-year">Asosiasi Mahasiswa Seni Islami (AMSI) Nusantara | 2024 - 2025</div>
-                <ul class="org-desc">
-                    <li>Mengkoordinasikan seluruh UKM yang memiliki latar belakang ke-Alqur'anan dan seni Islam se-Indonesia</li>
-                    <li>Membuat agenda tahunan rutin silaturahmi AMSI Nusantara</li>
-                </ul>
+                <ul class="org-desc"><li>Mengkoordinasikan seluruh UKM yang memiliki latar belakang ke-Alqur'anan dan seni Islam se-Indonesia</li><li>Membuat agenda tahunan rutin silaturahmi AMSI Nusantara</li></ul>
             </div>
             <div class="org-item">
                 <div class="org-title">Ketua Umum</div>
                 <div class="org-year">Himpunan Qari dan Qari'ah (HIQMA) UIN Jakarta | 2023 - 2024</div>
-                <ul class="org-desc">
-                    <li>Memimpin organisasi mahasiswa tingkat universitas dalam bidang seni Islam dan Al-Qur'an</li>
-                    <li>Mengelola kegiatan perlombaan Festival Seni Islami tingkat Nasional</li>
-                    <li>Mengembangkan program kaderisasi dan pembinaan bakat mahasiswa</li>
-                    <li>Merancang dan menjadi penanggung jawab umum dalam setiap event yang berjalan</li>
-                </ul>
+                <ul class="org-desc"><li>Memimpin organisasi mahasiswa tingkat universitas dalam bidang seni Islam dan Al-Qur'an</li><li>Mengelola kegiatan perlombaan Festival Seni Islami tingkat Nasional</li><li>Mengembangkan program kaderisasi dan pembinaan bakat mahasiswa</li><li>Merancang dan menjadi penanggung jawab umum dalam setiap event yang berjalan</li></ul>
             </div>
         </div>
     </div>
@@ -380,10 +426,7 @@
     <div class="container">
         <h2 class="section-title">Academic Experience</h2>
         <div class="card">
-            <ul style="margin-left: 20px;">
-                <li><strong>Guru Pembimbing Lomba Karya Ilmiah Tingkat Nasional</strong> (2026)</li>
-                <li><strong>Publikasi artikel dan tulisan edukatif</strong> berbasis keislaman dan kepemudaan pada media digital (2024 - Sekarang)</li>
-            </ul>
+            <ul style="margin-left: 20px;"><li><strong>Guru Pembimbing Lomba Karya Ilmiah Tingkat Nasional</strong> (2026)</li><li><strong>Publikasi artikel dan tulisan edukatif</strong> berbasis keislaman dan kepemudaan pada media digital (2024 - Sekarang)</li></ul>
         </div>
     </div>
 </section>
@@ -407,8 +450,8 @@
                 <thead><tr><th>Sertifikasi / Penghargaan</th><th>Tahun</th></thead>
                 <tbody>
                     <tr><td>Guru ter-favorit di SMK Bina Rahayu, Depok</td><td>2025</td></tr>
-                    <tr><td>Sertifikasi Kuliah Studi Islam dengan tema "Intisari Hadis Arba'in"</td><td>2025</td></tr>
-                    <tr><td>Sertifikasi kaderisasi tenaga Hisab Rukyat Nasional</td><td>2025</td></tr>
+                    <tr><td>Sertifikasi Kuliah Studi Islam "Intisari Hadis Arbain" (eLSSI)</td><td>2025</td></tr>
+                    <tr><td>Sertifikasi kaderisasi tenaga Hisab Rukyat Nasional (Kemenag RI)</td><td>2025</td></tr>
                     <tr><td>Syahadah Standarisasi Da'i Majelis Ulama Indonesia (MUI) Pusat</td><td>2024</td></tr>
                     <tr><td>Certificate Leadership in Qur'an (C.LQ)</td><td>2024</td></tr>
                     <tr><td>Awardee Beasiswa Baznas</td><td>2020-2024</td></tr>
@@ -421,45 +464,60 @@
     </div>
 </section>
 
-<section id="skills">
-    <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-grid">
-            <span class="skill-badge">Public Communication & Islamic Speaking</span>
-            <span class="skill-badge">Classroom Management</span>
-            <span class="skill-badge">Digital Learning Media</span>
-            <span class="skill-badge">Educational Leadership</span>
-            <span class="skill-badge">Leadership & Teamwork</span>
-            <span class="skill-badge">Event Management, Mentoring & Training</span>
-        </div>
-    </div>
-</section>
-
 <section id="gallery">
     <div class="container">
         <h2 class="section-title">Dokumentasi Kegiatan & Sertifikat</h2>
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="CamScanner 24-03-2026 10.08.pdf" alt="Dokumen"><p>📄 Surat Rekomendasi</p></div>
-            <div class="gallery-item"><img src="SERTIFIKAT FSIN.png" alt="Sertifikat"><p>📜 Sertifikat FSIN</p></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 14.35.57.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 1</p></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 14.35.58 (1).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 2</p></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 14.35.58 (2).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 3</p></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 14.35.58.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 4</p></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 14.35.59.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 5</p></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.02.24.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 6</p></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.02.58.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 7</p></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.14.54(1).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 8</p></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.14.54(2).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 9</p></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.14.54(3).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 10</p></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.14.54.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 11</p></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.14.55(1).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 12</p></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.14.55.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 13</p></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.15.31.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 14</p></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.16.16.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 15</p></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.17.55.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 16</p></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.22.49.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 17</p></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-05-28 at 15.23.08.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi 18</p></div>
-            <div class="gallery-item"><img src="Nailul Izzata Gufron (1).pdf" alt="CV"><p>📄 CV Nailul Izzata Gufron</p></div>
+            <!-- Sertifikat KSI Hadis Arbain -->
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="gambar.png" alt="Sertifikat KSI Hadis Arbain">
+                <p>📜 Sertifikat KSI "Intisari Hadis Arbain" - eLSSI (2025)</p>
+            </div>
+            <!-- Surat Rekomendasi SMK Bina Rahayu -->
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="gambar%20(1).png" alt="Surat Rekomendasi SMK Bina Rahayu">
+                <p>📄 Surat Rekomendasi - Guru Pembimbing Lomba Nasional (2026)</p>
+            </div>
+            <!-- Sertifikat Hisab Rukyat Kemenag -->
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="gambar%20(2).png" alt="Sertifikat Hisab Rukyat Kemenag">
+                <p>🌙 Sertifikat Kaderisasi Hisab Rukyat Nasional - Kemenag RI (2025)</p>
+            </div>
+            <!-- Foto LDKO Daarul Qur'an (dari file WhatsApp yang dikirim) -->
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="WhatsApp%20Image%202026-05-31%20at%2022.32.27.jpeg" alt="Pemateri LDKO Daarul Qur'an">
+                <p>🎤 Pemateri LDKO Institut Daarul Qur'an Jakarta (2025)</p>
+            </div>
+            <!-- Sertifikat FSIN -->
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="SERTIFIKAT%20FSIN.png" alt="Sertifikat FSIN">
+                <p>📜 Sertifikat FSIN</p>
+            </div>
+            <!-- CamScanner -->
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="CamScanner%2024-03-2026%2010.08.pdf" alt="Dokumen">
+                <p>📄 Dokumen Pendukung</p>
+            </div>
+            <!-- 18 file WhatsApp lainnya (saya singkat agar kode tidak terlalu panjang, tapi tetap ditampilkan) -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2014.35.57.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 1</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2014.35.58%20(1).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 2</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2014.35.58%20(2).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 3</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2014.35.58.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 4</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2014.35.59.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 5</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.02.24.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 6</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.02.58.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 7</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.14.54(1).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 8</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.14.54(2).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 9</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.14.54(3).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 10</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.14.54.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 11</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.14.55(1).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 12</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.14.55.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 13</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.15.31.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 14</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.16.16.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 15</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.17.55.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 16</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.22.49.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 17</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.23.08.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 18</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="Nailul%20Izzata%20Gufron%20(1).pdf" alt="CV"><p>📄 CV Nailul Izzata Gufron</p></div>
         </div>
     </div>
 </section>
@@ -471,6 +529,8 @@
             <a href="https://wa.me/6287820768832" class="contact-item" target="_blank">📱 WhatsApp</a>
             <a href="mailto:nailulgufron40@gmail.com" class="contact-item">✉️ Email</a>
             <a href="https://www.instagram.com/nai_luuuul/" class="contact-item" target="_blank">📷 Instagram</a>
+            <a href="https://www.youtube.com/@NailulIzzataGufron" class="contact-item" target="_blank">▶️ YouTube</a>
+            <a href="Nailul%20Izzata%20Gufron%20(1).pdf" class="download-btn" download>📄 Download CV PDF</a>
         </div>
     </div>
 </section>
@@ -480,6 +540,25 @@
         <p>&copy; 2026 Nailul Izzata Gufron, S.Ag. | Da'i Tersertifikasi MUI Pusat | Leadership Mentor</p>
     </div>
 </footer>
+
+<!-- Modal untuk perbesar gambar -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
+
+<script>
+    function openModal(element) {
+        var img = element.querySelector('img');
+        var modal = document.getElementById('imageModal');
+        var modalImg = document.getElementById('modalImage');
+        modal.style.display = "block";
+        modalImg.src = img.src;
+    }
+    function closeModal() {
+        document.getElementById('imageModal').style.display = "none";
+    }
+</script>
 
 </body>
 </html>
