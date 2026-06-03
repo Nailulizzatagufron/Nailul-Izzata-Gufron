@@ -5,330 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nailul Izzata Gufron - Portofolio</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #1F2937;
-            background-color: #FFFFFF;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background-color: #FFFFFF;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #0D9488;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #1F2937;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #0D9488;
-        }
-
-        .hero {
-            padding: 60px 0;
-            text-align: center;
-            background: linear-gradient(135deg, #FFFFFF 0%, #F0FDF9 100%);
-        }
-
-        .profile-circle {
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-            font-weight: bold;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .hero .tagline {
-            font-size: 1.1rem;
-            color: #0D9488;
-            margin-bottom: 15px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #0D9488;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 20px;
-            transition: all 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #0F766E;
-        }
-
-        section {
-            padding: 60px 0;
-            border-bottom: 1px solid #E5E7EB;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: #0D9488;
-            margin: 10px auto 0;
-        }
-
-        .card {
-            background: #FFFFFF;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            border: 1px solid #E5E7EB;
-        }
-
-        .org-item {
-            margin-bottom: 30px;
-        }
-
-        .org-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #0D9488;
-            margin-bottom: 5px;
-        }
-
-        .org-year {
-            color: #6B7280;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-
-        .org-desc {
-            margin-left: 20px;
-        }
-
-        .org-desc li {
-            margin-bottom: 5px;
-        }
-
-        .table-wrapper {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 12px;
-        }
-
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #E5E7EB;
-        }
-
-        th {
-            background-color: #F0FDF9;
-            color: #0D9488;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .gallery-item {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border: 1px solid #E5E7EB;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.02);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .gallery-item p {
-            padding: 12px;
-            font-size: 0.9rem;
-            text-align: center;
-            font-weight: 500;
-        }
-
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-        }
-
-        .skill-badge {
-            background: #F0FDF9;
-            color: #0D9488;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-weight: 500;
-            border: 1px solid #0D9488;
-        }
-
-        .contact-info {
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            background: #F9FAFB;
-            padding: 12px 25px;
-            border-radius: 40px;
-            text-decoration: none;
-            color: #1F2937;
-            border: 1px solid #E5E7EB;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .contact-item:hover {
-            background: #0D9488;
-            color: white;
-        }
-
-        .download-btn {
-            background: #0D9488;
-            color: white;
-            padding: 14px 30px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s;
-        }
-
-        .download-btn:hover {
-            background: #0F766E;
-            transform: translateY(-2px);
-        }
-
-        footer {
-            background: #1F2937;
-            color: #9CA3AF;
-            text-align: center;
-            padding: 25px 0;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .nav-links {
-                justify-content: center;
-            }
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            .section-title {
-                font-size: 1.5rem;
-            }
-        }
-
-        /* Modal untuk perbesar gambar */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            cursor: pointer;
-        }
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 90%;
-            margin-top: 5%;
-        }
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #1F2937; background-color: #FFFFFF; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background-color: #FFFFFF; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; flex-wrap: wrap; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #0D9488; }
+        .nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
+        .nav-links a { text-decoration: none; color: #1F2937; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: #0D9488; }
+        .hero { padding: 60px 0; text-align: center; background: linear-gradient(135deg, #FFFFFF 0%, #F0FDF9 100%); }
+        .profile-circle { width: 150px; height: 150px; background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: bold; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero .tagline { font-size: 1.1rem; color: #0D9488; margin-bottom: 15px; }
+        .btn { display: inline-block; background-color: #0D9488; color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 20px; transition: all 0.3s; }
+        .btn:hover { background-color: #0F766E; }
+        section { padding: 60px 0; border-bottom: 1px solid #E5E7EB; }
+        .section-title { font-size: 2rem; margin-bottom: 40px; text-align: center; }
+        .section-title:after { content: ''; display: block; width: 60px; height: 3px; background: #0D9488; margin: 10px auto 0; }
+        .card { background: #FFFFFF; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #E5E7EB; }
+        .org-item { margin-bottom: 30px; }
+        .org-title { font-size: 1.3rem; font-weight: bold; color: #0D9488; margin-bottom: 5px; }
+        .org-year { color: #6B7280; font-size: 0.9rem; margin-bottom: 10px; }
+        .org-desc { margin-left: 20px; }
+        .org-desc li { margin-bottom: 5px; }
+        .table-wrapper { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #E5E7EB; }
+        th { background-color: #F0FDF9; color: #0D9488; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
+        .gallery-item { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #E5E7EB; cursor: pointer; transition: transform 0.2s; }
+        .gallery-item:hover { transform: scale(1.02); }
+        .gallery-item img { width: 100%; height: 200px; object-fit: cover; }
+        .gallery-item p { padding: 12px; font-size: 0.85rem; text-align: center; font-weight: 500; background: #F9FAFB; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .skill-badge { background: #F0FDF9; color: #0D9488; padding: 8px 20px; border-radius: 30px; font-weight: 500; border: 1px solid #0D9488; }
+        .contact-info { text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+        .contact-item { background: #F9FAFB; padding: 12px 25px; border-radius: 40px; text-decoration: none; color: #1F2937; border: 1px solid #E5E7EB; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+        .contact-item:hover { background: #0D9488; color: white; }
+        .download-btn { background: #0D9488; color: white; padding: 12px 25px; border-radius: 40px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s; }
+        .download-btn:hover { background: #0F766E; transform: translateY(-2px); }
+        footer { background: #1F2937; color: #9CA3AF; text-align: center; padding: 25px 0; }
+        @media (max-width: 768px) { nav { flex-direction: column; gap: 15px; } .hero h1 { font-size: 1.8rem; } .section-title { font-size: 1.5rem; } }
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); cursor: pointer; }
+        .modal-content { margin: auto; display: block; max-width: 90%; max-height: 90%; margin-top: 5%; }
+        .close { position: absolute; top: 20px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -345,7 +66,6 @@
                 <a href="#academic">Akademik</a>
                 <a href="#publications">Publikasi</a>
                 <a href="#gallery">Galeri</a>
-                <a href="#certifications">Sertifikat</a>
                 <a href="#contact">Kontak</a>
             </div>
         </nav>
@@ -376,9 +96,7 @@
         <h2 class="section-title">Pengalaman Narasumber</h2>
         <div class="table-wrapper">
             <table>
-                <thead>
-                    <tr><th>Peran</th><th>Acara / Instansi</th><th>Tahun</th></tr>
-                </thead>
+                <thead><tr><th>Peran</th><th>Acara / Instansi</th><th>Tahun</th></tr></thead>
                 <tbody>
                     <tr><td>Pengisi Kajian</td><td>Kecamatan Cipayung</td><td>2026</td></tr>
                     <tr><td>Pemateri Leadership</td><td>Institute Daarul Qur'an Jakarta</td><td>2025</td></tr>
@@ -403,21 +121,9 @@
     <div class="container">
         <h2 class="section-title">Pengalaman Organisasi</h2>
         <div class="card">
-            <div class="org-item">
-                <div class="org-title">Koordinator Dewan Pertimbangan Organisasi</div>
-                <div class="org-year">HIQMA UIN Jakarta | 2024 - 2026</div>
-                <ul class="org-desc"><li>Mengawasi berjalannya roda organisasi</li><li>Mempertimbangkan setiap kebijakan yang akan dilakukan pengurus dan anggota organisasi</li></ul>
-            </div>
-            <div class="org-item">
-                <div class="org-title">Ketua Umum</div>
-                <div class="org-year">Asosiasi Mahasiswa Seni Islami (AMSI) Nusantara | 2024 - 2025</div>
-                <ul class="org-desc"><li>Mengkoordinasikan seluruh UKM yang memiliki latar belakang ke-Alqur'anan dan seni Islam se-Indonesia</li><li>Membuat agenda tahunan rutin silaturahmi AMSI Nusantara</li></ul>
-            </div>
-            <div class="org-item">
-                <div class="org-title">Ketua Umum</div>
-                <div class="org-year">Himpunan Qari dan Qari'ah (HIQMA) UIN Jakarta | 2023 - 2024</div>
-                <ul class="org-desc"><li>Memimpin organisasi mahasiswa tingkat universitas dalam bidang seni Islam dan Al-Qur'an</li><li>Mengelola kegiatan perlombaan Festival Seni Islami tingkat Nasional</li><li>Mengembangkan program kaderisasi dan pembinaan bakat mahasiswa</li><li>Merancang dan menjadi penanggung jawab umum dalam setiap event yang berjalan</li></ul>
-            </div>
+            <div class="org-item"><div class="org-title">Koordinator Dewan Pertimbangan Organisasi</div><div class="org-year">HIQMA UIN Jakarta | 2024 - 2026</div><ul class="org-desc"><li>Mengawasi berjalannya roda organisasi</li><li>Mempertimbangkan setiap kebijakan yang akan dilakukan pengurus dan anggota organisasi</li></ul></div>
+            <div class="org-item"><div class="org-title">Ketua Umum</div><div class="org-year">Asosiasi Mahasiswa Seni Islami (AMSI) Nusantara | 2024 - 2025</div><ul class="org-desc"><li>Mengkoordinasikan seluruh UKM yang memiliki latar belakang ke-Alqur'anan dan seni Islam se-Indonesia</li><li>Membuat agenda tahunan rutin silaturahmi AMSI Nusantara</li></ul></div>
+            <div class="org-item"><div class="org-title">Ketua Umum</div><div class="org-year">Himpunan Qari dan Qari'ah (HIQMA) UIN Jakarta | 2023 - 2024</div><ul class="org-desc"><li>Memimpin organisasi mahasiswa tingkat universitas dalam bidang seni Islam dan Al-Qur'an</li><li>Mengelola kegiatan perlombaan Festival Seni Islami tingkat Nasional</li><li>Mengembangkan program kaderisasi dan pembinaan bakat mahasiswa</li><li>Merancang dan menjadi penanggung jawab umum dalam setiap event yang berjalan</li></ul></div>
         </div>
     </div>
 </section>
@@ -425,9 +131,7 @@
 <section id="academic">
     <div class="container">
         <h2 class="section-title">Academic Experience</h2>
-        <div class="card">
-            <ul style="margin-left: 20px;"><li><strong>Guru Pembimbing Lomba Karya Ilmiah Tingkat Nasional</strong> (2026)</li><li><strong>Publikasi artikel dan tulisan edukatif</strong> berbasis keislaman dan kepemudaan pada media digital (2024 - Sekarang)</li></ul>
-        </div>
+        <div class="card"><ul style="margin-left: 20px;"><li><strong>Guru Pembimbing Lomba Karya Ilmiah Tingkat Nasional</strong> (2026)</li><li><strong>Publikasi artikel dan tulisan edukatif</strong> berbasis keislaman dan kepemudaan pada media digital (2024 - Sekarang)</li></ul></div>
     </div>
 </section>
 
@@ -442,82 +146,52 @@
     </div>
 </section>
 
-<section id="certifications">
-    <div class="container">
-        <h2 class="section-title">Sertifikasi & Penghargaan</h2>
-        <div class="table-wrapper">
-            <table>
-                <thead><tr><th>Sertifikasi / Penghargaan</th><th>Tahun</th></thead>
-                <tbody>
-                    <tr><td>Guru ter-favorit di SMK Bina Rahayu, Depok</td><td>2025</td></tr>
-                    <tr><td>Sertifikasi Kuliah Studi Islam "Intisari Hadis Arbain" (eLSSI)</td><td>2025</td></tr>
-                    <tr><td>Sertifikasi kaderisasi tenaga Hisab Rukyat Nasional (Kemenag RI)</td><td>2025</td></tr>
-                    <tr><td>Syahadah Standarisasi Da'i Majelis Ulama Indonesia (MUI) Pusat</td><td>2024</td></tr>
-                    <tr><td>Certificate Leadership in Qur'an (C.LQ)</td><td>2024</td></tr>
-                    <tr><td>Awardee Beasiswa Baznas</td><td>2020-2024</td></tr>
-                    <tr><td>Wisudawan Tahfiz 5 Juz HIQMA UIN Jakarta</td><td>2022</td></tr>
-                    <tr><td>Certificate Khatib dan Mubaligh dari DMI & PUI Cabang Cipayung Jakarta Timur</td><td>2021</td></tr>
-                    <tr><td>Sertifikasi Bahasa Arab oleh Yayasan Basis Ummah</td><td>2021</td></tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</section>
-
 <section id="gallery">
     <div class="container">
-        <h2 class="section-title">Dokumentasi Kegiatan & Sertifikat</h2>
-        <div class="gallery-grid">
+        <h2 class="section-title">Dokumentasi & Sertifikat</h2>
+        <div class="gallery-grid" id="galleryGrid">
             <!-- Sertifikat KSI Hadis Arbain -->
-            <div class="gallery-item" onclick="openModal(this)">
-                <img src="gambar.png" alt="Sertifikat KSI Hadis Arbain">
-                <p>📜 Sertifikat KSI "Intisari Hadis Arbain" - eLSSI (2025)</p>
-            </div>
-            <!-- Surat Rekomendasi SMK Bina Rahayu -->
-            <div class="gallery-item" onclick="openModal(this)">
-                <img src="gambar%20(1).png" alt="Surat Rekomendasi SMK Bina Rahayu">
-                <p>📄 Surat Rekomendasi - Guru Pembimbing Lomba Nasional (2026)</p>
-            </div>
-            <!-- Sertifikat Hisab Rukyat Kemenag -->
-            <div class="gallery-item" onclick="openModal(this)">
-                <img src="gambar%20(2).png" alt="Sertifikat Hisab Rukyat Kemenag">
-                <p>🌙 Sertifikat Kaderisasi Hisab Rukyat Nasional - Kemenag RI (2025)</p>
-            </div>
-            <!-- Foto LDKO Daarul Qur'an (dari file WhatsApp yang dikirim) -->
-            <div class="gallery-item" onclick="openModal(this)">
-                <img src="WhatsApp%20Image%202026-05-31%20at%2022.32.27.jpeg" alt="Pemateri LDKO Daarul Qur'an">
-                <p>🎤 Pemateri LDKO Institut Daarul Qur'an Jakarta (2025)</p>
-            </div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="gambar.png" alt="Sertifikat KSI"><p>📜 Sertifikat KSI "Intisari Hadis Arbain" - eLSSI (2025)</p></div>
+            <!-- Surat Rekomendasi SMK Bina Rahayu (JPG) -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="surat_rekomendasi_pembimbing_karya_ilmiyah_page-0001.jpg" alt="Surat Rekomendasi"><p>📄 Surat Rekomendasi - Guru Pembimbing Lomba Nasional (2026)</p></div>
+            <!-- Sertifikat Hisab Rukyat Kemenag (JPG) -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertifikat_tenaga_rukyat_hisab_page-0001.jpg" alt="Sertifikat Hisab Rukyat"><p>🌙 Sertifikat Kaderisasi Hisab Rukyat Nasional - Kemenag RI (2025)</p></div>
+            <!-- Sertifikat MUI -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="syahadah_standarisasi_dai.jpeg" alt="Syahadah MUI"><p>🕌 Syahadah Standarisasi Da'i - MUI Pusat (2025)</p></div>
+            <!-- Sertifikat CLQ -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertif_CLQ.jpeg" alt="Sertifikat CLQ"><p>📜 Certificate Leadership in Qur'an (C.LQ) - Mahir Academy (2024)</p></div>
+            <!-- Piagam Khatib -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="piagan_penghargaan_khatib.jpeg" alt="Piagam Khatib"><p>🕌 Piagam Khatib & Mubaligh - DMI & PUI Cipayung (2022)</p></div>
             <!-- Sertifikat FSIN -->
-            <div class="gallery-item" onclick="openModal(this)">
-                <img src="SERTIFIKAT%20FSIN.png" alt="Sertifikat FSIN">
-                <p>📜 Sertifikat FSIN</p>
-            </div>
-            <!-- CamScanner -->
-            <div class="gallery-item" onclick="openModal(this)">
-                <img src="CamScanner%2024-03-2026%2010.08.pdf" alt="Dokumen">
-                <p>📄 Dokumen Pendukung</p>
-            </div>
-            <!-- 18 file WhatsApp lainnya (saya singkat agar kode tidak terlalu panjang, tapi tetap ditampilkan) -->
-            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2014.35.57.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 1</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2014.35.58%20(1).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 2</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2014.35.58%20(2).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 3</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2014.35.58.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 4</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2014.35.59.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 5</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.02.24.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 6</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.02.58.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 7</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.14.54(1).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 8</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.14.54(2).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 9</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.14.54(3).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 10</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.14.54.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 11</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.14.55(1).jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 12</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.14.55.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 13</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.15.31.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 14</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.16.16.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 15</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.17.55.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 16</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.22.49.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 17</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="WhatsApp%20Image%202026-05-28%20at%2015.23.08.jpeg" alt="Dokumentasi"><p>📸 Dokumentasi Kegiatan 18</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="Nailul%20Izzata%20Gufron%20(1).pdf" alt="CV"><p>📄 CV Nailul Izzata Gufron</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="SERTIFIKAT FSIN.png" alt="Sertifikat FSIN"><p>🎭 Steering Committee - Festival Seni Islami Nasional HIQMA (2023)</p></div>
+            <!-- Sertifikat LDKO -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertif_pengisi_acara_leadership.jpeg" alt="Sertifikat LDKO"><p>🎤 Pemateri LDKO - Institut Daarul Qur'an Jakarta (2025)</p></div>
+            <!-- Sertifikat KALAM UMAT -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertif_pengisi_acara_HQ.jpeg" alt="Sertifikat KALAM UMAT"><p>🎤 Pemateri KALAM UMAT - HIQMA UIN Jakarta (2023)</p></div>
+            <!-- Piagam DPO -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertif_DPO.jpeg" alt="Piagam DPO"><p>🏅 Koordinator Dewan Pertimbangan - HIQMA (2024)</p></div>
+            <!-- Piagam Pemantik -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertif_pengisi_acara_HQ (2).jpeg" alt="Piagam Pemantik"><p>🏅 Pemantik Kajian Umum - HIQMA UIN Jakarta (2024)</p></div>
+            <!-- Sertifikat Bahasa Arab -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertif_pembelejaran_arab.jpeg" alt="Sertifikat Bahasa Arab"><p>📜 Sertifikat Bahasa Arab Level 3 - Yayasan Basis Ummah (2021)</p></div>
+            <!-- Sertifikat Sanlat -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertif_pengisi_acara_sanlat.jpeg" alt="Sertifikat Sanlat"><p>🌙 Pemateri Pesantren Kilat - DKM Darul Arqom (2022)</p></div>
+            <!-- Sertifikat Pembicara MHIS -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertif_pembicara.jpeg" alt="Pembicara MHIS"><p>🎤 Speaker - Mutiara Harapan Islamic School (2025)</p></div>
+            <!-- Official PORSENI -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="official_pelatih_lomba_se_jawa-madura.jpeg" alt="Official PORSENI"><p>🏅 Official Da'i - PORSENI JAWARA I UIN Jember (2023)</p></div>
+            <!-- Pengisi Acara Muharram -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="pengisi_acara_muharram.jpeg" alt="Tabliqh Akbar"><p>🎤 Pengisi Tabliqh Akbar - Pamulang (2024)</p></div>
+            <!-- Pengisi Acara Kecamatan -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="pengisi_acara_di_kecamatan.jpeg" alt="Pengisi Kajian"><p>🎤 Pengisi Kajian - TP PKK Kecamatan Cipayung</p></div>
+            <!-- Leadership Training -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="leadership (2).jpeg" alt="Leadership Training"><p>🎤 Pemateri Leadership - Training Management Organization, Bogor (2024)</p></div>
+            <!-- Foto LDKO -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="leadership.jpeg" alt="LDKO"><p>📸 Dokumentasi LDKO - Institut Daarul Qur'an (2025)</p></div>
+            <!-- Flyer Maulid -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="flayer_maulid.jpeg" alt="Flyer Maulid"><p>📱 Flyer Peringatan Maulid Nabi - Al-Mubtadiin (2024)</p></div>
+            <!-- CV PDF -->
+            <div class="gallery-item" onclick="openModal(this)"><img src="Nailul Izzata Gufron (1).pdf" alt="CV"><p>📄 CV Nailul Izzata Gufron, S.Ag.</p></div>
         </div>
     </div>
 </section>
@@ -530,34 +204,20 @@
             <a href="mailto:nailulgufron40@gmail.com" class="contact-item">✉️ Email</a>
             <a href="https://www.instagram.com/nai_luuuul/" class="contact-item" target="_blank">📷 Instagram</a>
             <a href="https://www.youtube.com/@NailulIzzataGufron" class="contact-item" target="_blank">▶️ YouTube</a>
-            <a href="Nailul%20Izzata%20Gufron%20(1).pdf" class="download-btn" download>📄 Download CV PDF</a>
+            <a href="Nailul Izzata Gufron (1).pdf" class="download-btn" download>📄 Download CV PDF</a>
         </div>
     </div>
 </section>
 
 <footer>
-    <div class="container">
-        <p>&copy; 2026 Nailul Izzata Gufron, S.Ag. | Da'i Tersertifikasi MUI Pusat | Leadership Mentor</p>
-    </div>
+    <div class="container"><p>&copy; 2026 Nailul Izzata Gufron, S.Ag. | Da'i Tersertifikasi MUI Pusat | Leadership Mentor</p></div>
 </footer>
 
-<!-- Modal untuk perbesar gambar -->
-<div id="imageModal" class="modal" onclick="closeModal()">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImage">
-</div>
+<div id="imageModal" class="modal" onclick="closeModal()"><span class="close">&times;</span><img class="modal-content" id="modalImage"></div>
 
 <script>
-    function openModal(element) {
-        var img = element.querySelector('img');
-        var modal = document.getElementById('imageModal');
-        var modalImg = document.getElementById('modalImage');
-        modal.style.display = "block";
-        modalImg.src = img.src;
-    }
-    function closeModal() {
-        document.getElementById('imageModal').style.display = "none";
-    }
+    function openModal(element) { var img = element.querySelector('img'); var modal = document.getElementById('imageModal'); var modalImg = document.getElementById('modalImage'); modal.style.display = "block"; modalImg.src = img.src; }
+    function closeModal() { document.getElementById('imageModal').style.display = "none"; }
 </script>
 
 </body>
