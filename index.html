@@ -15,7 +15,8 @@
         .nav-links a { text-decoration: none; color: #1F2937; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: #0D9488; }
         .hero { padding: 80px 0; text-align: center; background: linear-gradient(135deg, #FFFFFF 0%, #F0FDF9 100%); }
-        .profile-circle { width: 150px; height: 150px; background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: bold; }
+        .profile-circle { width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%); }
+        .profile-circle img { width: 100%; height: 100%; object-fit: cover; }
         .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
         .hero .tagline { font-size: 1.2rem; color: #0D9488; margin-bottom: 10px; }
         .hero .motto { font-size: 1rem; color: #4B5563; font-style: italic; max-width: 600px; margin: 15px auto 0; }
@@ -29,8 +30,8 @@
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
         .focus-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
         .focus-item { background: #F0FDF9; color: #0D9488; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; }
-        .project-list, .output-list { margin-left: 20px; margin-top: 10px; }
-        .project-list li, .output-list li { margin-bottom: 8px; }
+        .output-list { margin-left: 20px; margin-top: 10px; }
+        .output-list li { margin-bottom: 8px; }
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
         .gallery-item { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #E5E7EB; cursor: pointer; transition: transform 0.2s; }
         .gallery-item:hover { transform: scale(1.02); }
@@ -41,8 +42,6 @@
         .contact-info { text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
         .contact-item { background: #F9FAFB; padding: 12px 25px; border-radius: 40px; text-decoration: none; color: #1F2937; border: 1px solid #E5E7EB; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
         .contact-item:hover { background: #0D9488; color: white; }
-        .download-btn { background: #0D9488; color: white; padding: 12px 25px; border-radius: 40px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s; }
-        .download-btn:hover { background: #0F766E; transform: translateY(-2px); }
         footer { background: #1F2937; color: #9CA3AF; text-align: center; padding: 30px 0; margin-top: 20px; }
         @media (max-width: 768px) { nav { flex-direction: column; gap: 15px; } .hero h1 { font-size: 1.8rem; } .section-title { font-size: 1.5rem; } }
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); cursor: pointer; }
@@ -72,7 +71,9 @@
 
 <section id="home" class="hero">
     <div class="container">
-        <div class="profile-circle">NG</div>
+        <div class="profile-circle" id="profileCircle">
+            <img src="foto-profil.jpg" alt="Nailul Izzata Gufron" onerror="this.onerror=null; this.parentElement.innerHTML='NG';">
+        </div>
         <h1>Nailul Izzata Gufron, S.Ag.</h1>
         <div class="tagline">Researcher in Qur'anic and Hadith Studies</div>
         <div class="tagline" style="font-size: 1rem; color: #0D9488;">Islamic Educator • Public Speaker • Leadership Trainer</div>
@@ -102,140 +103,44 @@
 <section id="projects">
     <div class="container">
         <h2 class="section-title">Projects</h2>
-        
-        <div class="card">
-            <h3>📋 HOTS & AKM Assessment Development</h3>
-            <p>Pengembangan instrumen asesmen berbasis Higher Order Thinking Skills (HOTS) dan Asesmen Kompetensi Minimum (AKM) untuk Pendidikan Agama Islam.</p>
-            <ul class="output-list">
-                <li>✅ Paket Soal HOTS PAI</li>
-                <li>✅ Instrumen AKM</li>
-                <li>✅ Soal berbasis studi kasus</li>
-                <li>✅ Penilaian autentik</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>📚 Learning Module Development</h3>
-            <p>Pengembangan perangkat pembelajaran Pendidikan Agama Islam berbasis Kurikulum Merdeka.</p>
-            <ul class="output-list">
-                <li>✅ Modul Pembelajaran</li>
-                <li>✅ RPP Fase E</li>
-                <li>✅ LKPD</li>
-                <li>✅ Asesmen Diagnostik</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>👥 Leadership Training Program</h3>
-            <p>Program pelatihan kepemimpinan berbasis nilai-nilai Al-Qur'an dan hadis.</p>
-            <ul class="output-list">
-                <li>🎯 Leadership Fundamental</li>
-                <li>🎯 Character Building</li>
-                <li>🎯 Team Management</li>
-                <li>🎯 Public Speaking</li>
-            </ul>
-            <p style="margin-top: 10px;"><strong>Dokumentasi:</strong> Leadership Institute Daarul Qur'an Jakarta • Training Management Organization Bogor • Mutiara Harapan Islamic School</p>
-        </div>
-
-        <div class="card">
-            <h3>🔬 Student Research Mentoring</h3>
-            <p>Pendampingan peserta didik dalam penyusunan karya ilmiah dan kompetisi penelitian tingkat nasional.</p>
-            <ul class="output-list">
-                <li>✅ Pembimbing LKTI Nasional</li>
-                <li>✅ Pendampingan penelitian siswa</li>
-            </ul>
-        </div>
+        <div class="card"><h3>📋 HOTS & AKM Assessment Development</h3><p>Pengembangan instrumen asesmen berbasis Higher Order Thinking Skills (HOTS) dan Asesmen Kompetensi Minimum (AKM) untuk Pendidikan Agama Islam.</p><ul class="output-list"><li>✅ Paket Soal HOTS PAI</li><li>✅ Instrumen AKM</li><li>✅ Soal berbasis studi kasus</li><li>✅ Penilaian autentik</li></ul></div>
+        <div class="card"><h3>📚 Learning Module Development</h3><p>Pengembangan perangkat pembelajaran Pendidikan Agama Islam berbasis Kurikulum Merdeka.</p><ul class="output-list"><li>✅ Modul Pembelajaran</li><li>✅ RPP Fase E</li><li>✅ LKPD</li><li>✅ Asesmen Diagnostik</li></ul></div>
+        <div class="card"><h3>👥 Leadership Training Program</h3><p>Program pelatihan kepemimpinan berbasis nilai-nilai Al-Qur'an dan hadis.</p><ul class="output-list"><li>🎯 Leadership Fundamental</li><li>🎯 Character Building</li><li>🎯 Team Management</li><li>🎯 Public Speaking</li></ul><p style="margin-top:10px"><strong>Dokumentasi:</strong> Leadership Institute Daarul Qur'an Jakarta • Training Management Organization Bogor • Mutiara Harapan Islamic School</p></div>
+        <div class="card"><h3>🔬 Student Research Mentoring</h3><p>Pendampingan peserta didik dalam penyusunan karya ilmiah dan kompetisi penelitian tingkat nasional.</p><ul class="output-list"><li>✅ Pembimbing LKTI Nasional</li><li>✅ Pendampingan penelitian siswa</li></ul></div>
     </div>
 </section>
 
 <section id="publications">
     <div class="container">
         <h2 class="section-title">Publikasi Ilmiah</h2>
-        
-        <div class="card">
-            <h3>📖 Thesis</h3>
-            <p><strong>Rasionalitas Jin dalam Al-Qur'an</strong><br>Kajian rasionalitas jin dalam perspektif Tafsir Al-Manar karya Muhammad Abduh dan Rasyid Ridha.</p>
-            <a href="https://repository.uinjkt.ac.id/dspace/handle/123456789/81619" target="_blank" style="color:#0D9488">🔗 Lihat Thesis →</a>
-        </div>
-
-        <div class="card">
-            <h3>📄 Journal Articles</h3>
-            <p><strong>Konservasi Lingkungan Melalui Penghijauan dalam Perspektif Hadis</strong><br>Jurnal Tabsyir (2025)</p>
-            <a href="https://doi.org/10.59059/tabsyir.v6i3.2291" target="_blank" style="color:#0D9488">🔗 Lihat Artikel →</a>
-            <p style="margin-top: 15px;"><strong>The Veto Paradox: US Hegemony and the Paralysis of Global Solidarity for Palestine</strong><br>Smart Politics Journal (2026)</p>
-            <a href="https://ejournal.smartpedia.co.id/index.php/SPolitics/article/view/10" target="_blank" style="color:#0D9488">🔗 Lihat Artikel →</a>
-        </div>
-
-        <div class="card">
-            <h3>📝 Popular Articles</h3>
-            <p><strong>Berbuat Baik: Untung atau Justru Buntung?</strong></p>
-            <a href="https://hiqmauinjakarta.com/berbuat-baik-untung-atau-justru-buntung-simak-yang-berikut-ini/" target="_blank" style="color:#0D9488">🔗 Baca Artikel →</a>
-        </div>
+        <div class="card"><h3>📖 Thesis</h3><p><strong>Rasionalitas Jin dalam Al-Qur'an</strong><br>Kajian rasionalitas jin dalam perspektif Tafsir Al-Manar karya Muhammad Abduh dan Rasyid Ridha.</p><a href="https://repository.uinjkt.ac.id/dspace/handle/123456789/81619" target="_blank" style="color:#0D9488">🔗 Lihat Thesis →</a></div>
+        <div class="card"><h3>📄 Journal Articles</h3><p><strong>Konservasi Lingkungan Melalui Penghijauan dalam Perspektif Hadis</strong><br>Jurnal Tabsyir (2025)</p><a href="https://doi.org/10.59059/tabsyir.v6i3.2291" target="_blank" style="color:#0D9488">🔗 Lihat Artikel →</a><p style="margin-top:15px"><strong>The Veto Paradox: US Hegemony and the Paralysis of Global Solidarity for Palestine</strong><br>Smart Politics Journal (2026)</p><a href="https://ejournal.smartpedia.co.id/index.php/SPolitics/article/view/10" target="_blank" style="color:#0D9488">🔗 Lihat Artikel →</a></div>
+        <div class="card"><h3>📝 Popular Articles</h3><p><strong>Berbuat Baik: Untung atau Justru Buntung?</strong></p><a href="https://hiqmauinjakarta.com/berbuat-baik-untung-atau-justru-buntung-simak-yang-berikut-ini/" target="_blank" style="color:#0D9488">🔗 Baca Artikel →</a></div>
     </div>
 </section>
 
 <section id="dawah">
     <div class="container">
         <h2 class="section-title">Da'wah & Public Speaking</h2>
-        
-        <div class="card">
-            <h3>🎥 Featured Videos</h3>
-            <div class="video-grid">
-                <div class="video-card"><iframe src="https://www.youtube.com/embed/-0Mkw3qSGjg" allowfullscreen></iframe><p>Lomba Da'i Muda Se-Indonesia</p></div>
-                <div class="video-card"><iframe src="https://www.youtube.com/embed/WFBYAGwa9p8" allowfullscreen></iframe><p>Kesinambungan antara Do'a dan Dzikir</p></div>
-                <div class="video-card"><iframe src="https://www.youtube.com/embed/aUNqvpBkciA" allowfullscreen></iframe><p>Awas! Ahli Qur'an tetapi Dibenci oleh Allah</p></div>
-                <div class="video-card"><iframe src="https://www.youtube.com/embed/VmgV06DzP0w" allowfullscreen></iframe><p>Pemimpin dalam Perspektif Al-Qur'an</p></div>
-                <div class="video-card"><iframe src="https://www.youtube.com/embed/rARW2mz7ooI" allowfullscreen></iframe><p>Sejarah Qurban Sejak Zaman Nabi Adam</p></div>
-                <div class="video-card"><iframe src="https://www.youtube.com/embed/cVM180nd3Is" allowfullscreen></iframe><p>Hikayat dan Makna Idul Fitri</p></div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h3>📰 Media Coverage</h3>
-            <p><strong>Peringatan Maulid Nabi Muhammad SAW 1446 H</strong><br>Liputan kegiatan dakwah dan pengabdian masyarakat di Majelis Al-Mubtadiin, Jakarta Timur.</p>
-            <a href="https://mediainvestigasimabes.co.id/2024/09/16/peringatan-maulid-nabi-muhammad-saw-1446-h-2024-m-haul-ema-abah-yang-ke-2-di-majelis-al-mubtadiin-setu-cipayung-jakarta-timur/" target="_blank" style="color:#0D9488">🔗 Baca Liputan →</a>
-        </div>
-
-        <div class="card">
-            <h3>🎤 Speaking Experience</h3>
-            <p><strong>Narasumber:</strong> Leadership Institute Daarul Qur'an Jakarta • Mutiara Harapan Islamic School • Kecamatan Cipayung • HIQMA UIN Jakarta • Training Management Organization Bogor • Masjid Al-Jami'ah UIN Jakarta</p>
-            <p style="margin-top: 10px;"><strong>Moderator:</strong> HIQMA Talk bersama Prof. Nasaruddin Umar • HIQMA Talk bersama Ust. Hasanudin Sinaga</p>
-        </div>
+        <div class="card"><h3>🎥 Featured Videos</h3><div class="video-grid"><div class="video-card"><iframe src="https://www.youtube.com/embed/-0Mkw3qSGjg" allowfullscreen></iframe><p>Lomba Da'i Muda Se-Indonesia</p></div><div class="video-card"><iframe src="https://www.youtube.com/embed/WFBYAGwa9p8" allowfullscreen></iframe><p>Kesinambungan antara Do'a dan Dzikir</p></div><div class="video-card"><iframe src="https://www.youtube.com/embed/aUNqvpBkciA" allowfullscreen></iframe><p>Awas! Ahli Qur'an tetapi Dibenci oleh Allah</p></div><div class="video-card"><iframe src="https://www.youtube.com/embed/VmgV06DzP0w" allowfullscreen></iframe><p>Pemimpin dalam Perspektif Al-Qur'an</p></div><div class="video-card"><iframe src="https://www.youtube.com/embed/rARW2mz7ooI" allowfullscreen></iframe><p>Sejarah Qurban Sejak Zaman Nabi Adam</p></div><div class="video-card"><iframe src="https://www.youtube.com/embed/cVM180nd3Is" allowfullscreen></iframe><p>Hikayat dan Makna Idul Fitri</p></div></div></div>
+        <div class="card"><h3>📰 Media Coverage</h3><p><strong>Peringatan Maulid Nabi Muhammad SAW 1446 H</strong><br>Liputan kegiatan dakwah dan pengabdian masyarakat di Majelis Al-Mubtadiin, Jakarta Timur.</p><a href="https://mediainvestigasimabes.co.id/2024/09/16/peringatan-maulid-nabi-muhammad-saw-1446-h-2024-m-haul-ema-abah-yang-ke-2-di-majelis-al-mubtadiin-setu-cipayung-jakarta-timur/" target="_blank" style="color:#0D9488">🔗 Baca Liputan →</a></div>
+        <div class="card"><h3>🎤 Speaking Experience</h3><p><strong>Narasumber:</strong> Leadership Institute Daarul Qur'an Jakarta • Mutiara Harapan Islamic School • Kecamatan Cipayung • HIQMA UIN Jakarta • Training Management Organization Bogor • Masjid Al-Jami'ah UIN Jakarta</p><p style="margin-top:10px"><strong>Moderator:</strong> HIQMA Talk bersama Prof. Nasaruddin Umar • HIQMA Talk bersama Ust. Hasanudin Sinaga</p></div>
     </div>
 </section>
 
 <section id="experience">
     <div class="container">
         <h2 class="section-title">Pengalaman</h2>
-        
-        <div class="card">
-            <h3>🎓 Pendidikan</h3>
-            <p><strong>Universitas Islam Negeri Syarif Hidayatullah Jakarta</strong><br>S1 Ilmu Al-Qur'an dan Tafsir | Cumlaude | IPK 3.74</p>
-            <p style="margin-top: 10px;"><strong>Universitas Islam Negeri Syarif Hidayatullah Jakarta</strong><br>S2 Pendidikan Agama Islam | Mahasiswa Aktif</p>
-        </div>
-
-        <div class="card">
-            <h3>🏫 Teaching Experience</h3>
-            <p><strong>Guru Pendidikan Agama Islam</strong> - SMP Islam Citra Bunda</p>
-            <p><strong>Guru Pendidikan Agama Islam</strong> - SMK Bina Rahayu</p>
-        </div>
-
-        <div class="card">
-            <h3>👥 Organizational Leadership</h3>
-            <p><strong>Ketua Umum</strong> - Himpunan Qari dan Qari'ah (HIQMA) UIN Jakarta (2023-2024)</p>
-            <p><strong>Ketua Umum</strong> - Asosiasi Mahasiswa Seni Islami (AMSI) Nusantara (2024-2025)</p>
-            <p><strong>Koordinator Dewan Pertimbangan Organisasi</strong> - HIQMA UIN Jakarta (2024-2026)</p>
-        </div>
+        <div class="card"><h3>🎓 Pendidikan</h3><p><strong>Universitas Islam Negeri Syarif Hidayatullah Jakarta</strong><br>S1 Ilmu Al-Qur'an dan Tafsir | Cumlaude | IPK 3.74</p><p style="margin-top:10px"><strong>Universitas Islam Negeri Syarif Hidayatullah Jakarta</strong><br>S2 Pendidikan Agama Islam | Mahasiswa Aktif</p></div>
+        <div class="card"><h3>🏫 Teaching Experience</h3><p><strong>Guru Pendidikan Agama Islam</strong> - SMP Islam Citra Bunda</p><p><strong>Guru Pendidikan Agama Islam</strong> - SMK Bina Rahayu</p></div>
+        <div class="card"><h3>👥 Organizational Leadership</h3><p><strong>Ketua Umum</strong> - Himpunan Qari dan Qari'ah (HIQMA) UIN Jakarta (2023-2024)</p><p><strong>Ketua Umum</strong> - Asosiasi Mahasiswa Seni Islami (AMSI) Nusantara (2024-2025)</p><p><strong>Koordinator Dewan Pertimbangan Organisasi</strong> - HIQMA UIN Jakarta (2024-2026)</p></div>
     </div>
 </section>
 
 <section id="certifications">
     <div class="container">
         <h2 class="section-title">Sertifikasi & Penghargaan</h2>
-        <div class="grid-2">
-            <div class="card"><p>✅ Da'i Tersertifikasi MUI Pusat (2025)</p><p>✅ Certificate Leadership in Qur'an (C.LQ.) - Mahir Academy (2024)</p><p>✅ Awardee Beasiswa Baznas (2020-2024)</p></div>
-            <div class="card"><p>✅ Sertifikasi Kaderisasi Hisab Rukyat Nasional - Kemenag RI (2025)</p><p>✅ Sertifikasi Khatib dan Mubaligh - DMI & PUI Cipayung (2022)</p><p>✅ Sertifikasi Bahasa Arab - Yayasan Basis Ummah (2021)</p><p>✅ Wisudawan Tahfiz 5 Juz - HIQMA UIN Jakarta (2023)</p></div>
-        </div>
+        <div class="grid-2"><div class="card"><p>✅ Da'i Tersertifikasi MUI Pusat (2025)</p><p>✅ Certificate Leadership in Qur'an (C.LQ.) - Mahir Academy (2024)</p><p>✅ Awardee Beasiswa Baznas (2020-2024)</p></div><div class="card"><p>✅ Sertifikasi Kaderisasi Hisab Rukyat Nasional - Kemenag RI (2025)</p><p>✅ Sertifikasi Khatib dan Mubaligh - DMI & PUI Cipayung (2022)</p><p>✅ Sertifikasi Bahasa Arab - Yayasan Basis Ummah (2021)</p><p>✅ Wisudawan Tahfiz 5 Juz - HIQMA UIN Jakarta (2023)</p></div></div>
     </div>
 </section>
 
@@ -243,18 +148,27 @@
     <div class="container">
         <h2 class="section-title">Dokumentasi & Sertifikat</h2>
         <div class="gallery-grid">
-            <div class="gallery-item" onclick="openModal(this)"><img src="syahadah_standarisasi_dai.jpeg" alt="Syahadah MUI"><p>🕌 Syahadah Da'i - MUI Pusat (2025)</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="sertif_CLQ.jpeg" alt="CLQ"><p>📜 Certificate Leadership in Qur'an (2024)</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="sertifikat_tenaga_rukyat_hisab_page-0001.jpg" alt="Hisab Rukyat"><p>🌙 Sertifikat Hisab Rukyat - Kemenag (2025)</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="piagan_penghargaan_khatib.jpeg" alt="Khatib"><p>🕌 Piagam Khatib & Mubaligh (2022)</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="sertif_pengisi_acara_leadership.jpeg" alt="LDKO"><p>🎤 Pemateri LDKO - Daarul Qur'an (2025)</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="sertif_pembicara.jpeg" alt="MHIS"><p>🎤 Speaker - MHIS Bintaro (2025)</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="leadership.jpeg" alt="LDKO"><p>📸 Dokumentasi LDKO (2025)</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="surat_rekomendasi_pembimbing_karya_ilmiyah_page-0001.jpg" alt="Rekomendasi"><p>📄 Surat Rekomendasi - Pembimbing LKTI (2026)</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="sertif_DPO.jpeg" alt="DPO"><p>🏅 Koordinator DPO - HIQMA (2024)</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="official_pelatih_lomba_se_jawa-madura.jpeg" alt="PORSENI"><p>🏅 Official Da'i - PORSENI (2023)</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="sertif_pembelejaran_arab.jpeg" alt="Bahasa Arab"><p>📜 Sertifikat Bahasa Arab - Basis Ummah (2021)</p></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="sertif_pengisi_acara_sanlat.jpeg" alt="Sanlat"><p>🌙 Pemateri Pesantren Kilat (2022)</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="syahadah-standarisasi-dai.jpeg" alt="Syahadah MUI"><p>🕌 Syahadah Da'i - MUI Pusat (2025)</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertifikat-clq.jpeg" alt="CLQ"><p>📜 Certificate Leadership in Qur'an (2024)</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertifikat-hisab-rukyat.jpg" alt="Hisab Rukyat"><p>🌙 Sertifikat Hisab Rukyat - Kemenag (2025)</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="piagam-khatib.jpeg" alt="Khatib"><p>🕌 Piagam Khatib & Mubaligh (2022)</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertif-pengisi-leadership.jpeg" alt="LDKO"><p>🎤 Pemateri LDKO - Daarul Qur'an (2025)</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertif-pembicara.jpeg" alt="MHIS"><p>🎤 Speaker - MHIS Bintaro (2025)</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="leadership-ldko.jpeg" alt="LDKO"><p>📸 Dokumentasi LDKO (2025)</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="surat-rekomendasi.jpg" alt="Rekomendasi"><p>📄 Surat Rekomendasi - Pembimbing LKTI (2026)</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertif-dpo.jpeg" alt="DPO"><p>🏅 Koordinator DPO - HIQMA (2024)</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="official-pelatih-lomba.jpeg" alt="PORSENI"><p>🏅 Official Da'i - PORSENI (2023)</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertif-bahasa-arab.jpeg" alt="Bahasa Arab"><p>📜 Sertifikat Bahasa Arab - Basis Ummah (2021)</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertif-pengisi-sanlat.jpeg" alt="Sanlat"><p>🌙 Pemateri Pesantren Kilat (2022)</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertifikat-festival-seni-islami.png" alt="Festival Seni"><p>🎭 Sertifikat Festival Seni Islami Nasional</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="flayer-maulid.jpeg" alt="Flayer Maulid"><p>📱 Flyer Maulid Nabi - Al-Mubtadiin (2024)</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="leadership-training-management.jpeg" alt="Leadership Training"><p>🎤 Leadership Training - Bogor (2024)</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="pengisi-acara-kecamatan.jpeg" alt="Pengisi Kecamatan"><p>🎤 Pengisi Kajian - TP PKK Cipayung</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="pengisi-acara-maulid.jpeg" alt="Pengisi Maulid"><p>🎤 Pengisi Acara Maulid Nabi</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="pengisi-acara-muharram.jpeg" alt="Tabliqh Akbar"><p>🎤 Pengisi Tabliqh Akbar - Pamulang (2024)</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="pengisi-di-the-jack.jpeg" alt="Pengisi The Jack"><p>🎤 Pengisi Acara - The Jack</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertif-pengisi-acara-hq.jpeg" alt="KALAM UMAT"><p>🎤 Pemateri KALAM UMAT - HIQMA (2023)</p></div>
+            <div class="gallery-item" onclick="openModal(this)"><img src="sertif-pengisi-acara-hq2.jpeg" alt="Pemantik"><p>🏅 Pemantik Kajian Umum - HIQMA (2024)</p></div>
         </div>
     </div>
 </section>
@@ -266,8 +180,6 @@
             <a href="https://wa.me/6287820768832" class="contact-item" target="_blank">📱 WhatsApp</a>
             <a href="mailto:nailulgufron40@gmail.com" class="contact-item">✉️ Email</a>
             <a href="https://www.instagram.com/nai_luuuul/" class="contact-item" target="_blank">📷 Instagram</a>
-            <a href="https://www.youtube.com/@NailulIzzataGufron" class="contact-item" target="_blank">▶️ YouTube</a>
-            <a href="Nailul Izzata Gufron (1).pdf" class="download-btn" download>📄 Download CV PDF</a>
         </div>
     </div>
 </section>
